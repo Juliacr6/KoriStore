@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kori Store - Formulario de Pedido</title>
+    <link rel="stylesheet" href="STYLE/styles.css">
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header>
+        <div class="header-container">
+            <h1>Kori Store</h1>
+            <p>Completa tus datos para procesar tu pedido de conservación</p>
+            <nav>
+                <a href="index.html">Volver al Catálogo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contenedor-formulario">
+        <div class="card-formulario">
+            <h2>Registro de Datos de Envío</h2>
+            <p class="subtitulo-form">Por favor, ingresa tus datos para coordinar el envío de tu merch. La información será tratada de forma confidencial según la Ley N.° 29733.</p>
+
+            <form id="form-pedido" novalidate>
+                
+                <div class="campo-grupo">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Julia Córdova" required aria-describedby="error-nombre">
+                    <span id="error-nombre" class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="telefono">Teléfono / Celular:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. 987654321" required aria-describedby="error-telefono">
+                    <span id="error-telefono" class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="direccion">Dirección de entrega:</label>
+                    <textarea id="direccion" name="direccion" rows="3" placeholder="Ingresa tu distrito y dirección exacta" required aria-describedby="error-direccion"></textarea>
+                    <span id="error-direccion" class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="campo-check">
+                    <input type="checkbox" id="consentimiento" name="consentimiento" required>
+                    <label for="consentimiento">Acepto el uso de mis datos exclusivamente para la gestión y entrega de este pedido.</label>
+                </div>
+
+                <button type="submit" class="btn-enviar">Confirmar y Enviar Pedido</button>
+                <p id="mensaje-respuesta" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Kori Store - Iniciativa Académica de Conservación (Ley N.° 29733)</p>
+    </footer>
+
+</body>
+</html>

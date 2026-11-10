@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kori Store - Tienda Oficial de Conservación</title>
+    <link rel="stylesheet" href="STYLE/styles.css">
+</head>
+<body>
+
+    <!-- Encabezado Principal -->
+    <header>
+        <div class="header-container">
+            <h1>Kori Store</h1>
+            <p>Merch oficial para la conservación del Mono Choro de Cola Amarilla</p>
+            <nav>
+                <a href="index.html">Catálogo</a>
+                <a href="impacto.html">¿Por qué ayudamos?</a>
+                <a href="pedidos.html">Formulario de Envío</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección de Catálogo de Merch -->
+        <section id="productos" aria-labelledby="titulo-catalogo">
+            <h2 id="titulo-catalogo">Kori Wear - Ropa de Conservación</h2>
+            <div class="catalogo">
+                
+                <!-- Producto 1: Polera Hombre -->
+                <article class="producto" data-nombre="Polera Oversize Hombre Kori" data-precio="75.00">
+                    <img src="IMG/POLERA HOMBRE.png" alt="Polera oversize para hombre con ilustración del mono choro">
+                    <h3>Polera Oversize (Hombre)</h3>
+                    <p><span class="precio">S/ 75.00</span> unidad</p>
+                    <button type="button" class="btn-anadir">Añadir al Carrito</button>
+                </article>
+
+                <!-- Producto 2: Polera Mujer -->
+                <article class="producto" data-nombre="Polera Oversize Mujer Kori" data-precio="75.00">
+                    <img src="IMG/POLERA MUJER.png" alt="Polera oversize para mujer con ilustración del mono choro">
+                    <h3>Polera Oversize (Mujer)</h3>
+                    <p><span class="precio">S/ 75.00</span> unidad</p>
+                    <button type="button" class="btn-anadir">Añadir al Carrito</button>
+                </article>
+
+                <!-- Producto 3: Polo Hombre -->
+                <article class="producto" data-nombre="Polo Casual Hombre Kori" data-precio="45.00">
+                    <img src="IMG/POLO HOMBRE.png" alt="Polo de algodón para hombre">
+                    <h3>Polo Casual (Hombre)</h3>
+                    <p><span class="precio">S/ 45.00</span> unidad</p>
+                    <button type="button" class="btn-anadir">Añadir al Carrito</button>
+                </article>
+
+                <!-- Producto 4: Polo Mujer -->
+                <article class="producto" data-nombre="Polo Casual Mujer Kori" data-precio="45.00">
+                    <img src="IMG/POLO MUJER.png" alt="Polo de algodón para mujer">
+                    <h3>Polo Casual (Mujer)</h3>
+                    <p><span class="precio">S/ 45.00</span> unidad</p>
+                    <button type="button" class="btn-anadir">Añadir al Carrito</button>
+                </article>
+
+                <!-- Producto 5: Peluche Eco -->
+                <article class="producto" data-nombre="Peluche Eco Kori" data-precio="50.00">
+                    <img src="IMG/PELUCHE.png" alt="Peluche artesanal del mono choro">
+                    <h3>Peluche Eco "Kori"</h3>
+                    <p><span class="precio">S/ 50.00</span> unidad</p>
+                    <button type="button" class="btn-anadir">Añadir al Carrito</button>
+                </article>
+
+                <!-- Producto 6: Taza Eco Protect -->
+                <article class="producto" data-nombre="Taza Eco Protect" data-precio="25.00">
+                    <img src="IMG/TAZA.png" alt="Taza de cerámica ecológica">
+                    <h3>Taza Eco Protect</h3>
+                    <p><span class="precio">S/ 25.00</span> unidad</p>
+                    <button type="button" class="btn-anadir">Añadir al Carrito</button>
+                </article>
+
+                <!-- Producto 7: Gorra Kori -->
+                <article class="producto" data-nombre="Gorra Kori" data-precio="30.00">
+                    <img src="IMG/GORRA.png" alt="Gorra con diseño sostenible">
+                    <h3>Gorra Eco Kori</h3>
+                    <p><span class="precio">S/ 30.00</span> unidad</p>
+                    <button type="button" class="btn-anadir">Añadir al Carrito</button>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Sección del Carrito de Compras -->
+        <section id="mi-pedido" aria-labelledby="titulo-pedido">
+            <h2 id="titulo-pedido" tabindex="-1">Mi Pedido de Merch</h2>
+            <p id="pedido-vacio">Tu carrito está vacío. Selecciona productos del catálogo para apoyar la causa.</p>
+            <ul id="lista-pedido"></ul>
+            <p class="total">Total: <strong id="total">S/ 0.00</strong></p>
+            
+            <div class="acciones-carrito">
+                <button type="button" id="btn-vaciar">Vaciar Pedido</button>
+                <a href="pedidos.html" class="btn-continuar">Proceder al Formulario</a>
+            </div>
+
+            <p id="aviso" class="solo-lector" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Kori Store - Iniciativa Académica de Conservación (Ley N.° 29733)</p>
+    </footer>
+
+    <script src="JSS/pedidos.js"></script>
