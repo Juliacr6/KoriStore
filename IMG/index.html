@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kori Store | Merch para proteger al Mono Choro</title>
+  <!-- 1. Estilos de Bootstrap 5.3.8 -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
+  <!-- 2. Estilos propios de la marca, siempre después -->
+  <link rel="stylesheet" href="STYLE/marca.css">
+  <!-- 3. JavaScript de Bootstrap y el propio -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous" defer></script>
+  <script src="JSS/pedidos.js" defer></script>
+  <script src="JSS/vaciar.js" defer></script>
+  <script src="JSS/imagenes.js" defer></script>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-md navbar-light border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Kori Store</a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#menu"
+              aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto gap-2 py-2 py-md-0 align-items-md-center">
+          <li class="nav-item"><a class="btn btn-marca btn-sm" aria-current="page" href="index.html">Catálogo</a></li>
+          <li class="nav-item"><a class="btn btn-ghost btn-sm" href="impacto.html">¿Por qué ayudamos?</a></li>
+          <li class="nav-item"><a class="btn btn-ghost btn-sm" href="pedidos.html">Formulario de Envío</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+
+    <!-- Portada -->
+    <section class="py-4 py-md-5 mb-5 border-bottom hero">
+      <div class="row align-items-center g-4">
+        <div class="col-md-7">
+          <h1 class="display-5 fw-semibold">Merch que protege al Mono Choro</h1>
+          <p class="lead">Merch oficial para la conservación del Mono Choro de Cola Amarilla. Cada compra financia reforestación, comunidades locales y monitoreo.</p>
+          <a class="btn btn-marca" href="#productos">Ver productos</a>
+        </div>
+        <div class="col-md-5">
+          <img src="IMG/MONO2.png" class="img-fluid rounded-3"
+               alt="Cría de mono choro de cola amarilla sostenida entre las manos de una persona">
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo de Merch -->
+    <section id="productos" class="mb-5" aria-labelledby="titulo-catalogo">
+      <h2 id="titulo-catalogo" class="mb-3">Kori Wear - Ropa de Conservación</h2>
+      <div class="catalogo row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+
+        <!-- Producto 1: Polera Hombre -->
+        <div class="col">
+          <article class="producto card h-100"
+                   data-nombre="Polera Oversize Hombre Kori" data-precio="75.00">
+            <img src="IMG/POLERA HOMBRE.png" class="card-img-top"
+                 alt="Polera oversize para hombre con ilustración del mono choro">
+            <div class="card-body">
+              <h3 class="card-title h5">Polera Oversize (Hombre)</h3>
+              <p class="card-text"><span class="precio">S/ 75.00</span> unidad</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button type="button" class="btn btn-marca w-100 btn-anadir">Añadir al Carrito</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Producto 2: Polera Mujer -->
+        <div class="col">
+          <article class="producto card h-100"
+                   data-nombre="Polera Oversize Mujer Kori" data-precio="75.00">
+            <img src="IMG/POLERA MUJER.png" class="card-img-top"
+                 alt="Polera oversize para mujer con ilustración del mono choro">
+            <div class="card-body">
+              <h3 class="card-title h5">Polera Oversize (Mujer)</h3>
+              <p class="card-text"><span class="precio">S/ 75.00</span> unidad</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button type="button" class="btn btn-marca w-100 btn-anadir">Añadir al Carrito</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Producto 3: Polo Hombre -->
+        <div class="col">
+          <article class="producto card h-100"
+                   data-nombre="Polo Casual Hombre Kori" data-precio="45.00">
+            <img src="IMG/POLO HOMBRE.png" class="card-img-top"
+                 alt="Polo de algodón para hombre">
+            <div class="card-body">
+              <h3 class="card-title h5">Polo Casual (Hombre)</h3>
+              <p class="card-text"><span class="precio">S/ 45.00</span> unidad</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button type="button" class="btn btn-marca w-100 btn-anadir">Añadir al Carrito</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Producto 4: Polo Mujer -->
+        <div class="col">
+          <article class="producto card h-100"
+                   data-nombre="Polo Casual Mujer Kori" data-precio="45.00">
+            <img src="IMG/POLO MUJER.png" class="card-img-top"
+                 alt="Polo de algodón para mujer">
+            <div class="card-body">
+              <h3 class="card-title h5">Polo Casual (Mujer)</h3>
+              <p class="card-text"><span class="precio">S/ 45.00</span> unidad</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button type="button" class="btn btn-marca w-100 btn-anadir">Añadir al Carrito</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Producto 5: Peluche Eco -->
+        <div class="col">
+          <article class="producto card h-100"
+                   data-nombre="Peluche Eco Kori" data-precio="50.00">
+            <img src="IMG/PELUCHE.png" class="card-img-top"
+                 alt="Peluche artesanal del mono choro">
+            <div class="card-body">
+              <h3 class="card-title h5">Peluche Eco "Kori"</h3>
+              <p class="card-text"><span class="precio">S/ 50.00</span> unidad</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button type="button" class="btn btn-marca w-100 btn-anadir">Añadir al Carrito</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Producto 6: Taza Eco Protect -->
+        <div class="col">
+          <article class="producto card h-100"
+                   data-nombre="Taza Eco Protect" data-precio="25.00">
+            <img src="IMG/TAZA.png" class="card-img-top"
+                 alt="Taza de cerámica ecológica con un mono regando una planta">
+            <div class="card-body">
+              <h3 class="card-title h5">Taza Eco Protect</h3>
+              <p class="card-text"><span class="precio">S/ 25.00</span> unidad</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button type="button" class="btn btn-marca w-100 btn-anadir">Añadir al Carrito</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Producto 7: Gorra Kori -->
+        <div class="col">
+          <article class="producto card h-100"
+                   data-nombre="Gorra Kori" data-precio="30.00">
+            <img src="IMG/GORRA.png" class="card-img-top"
+                 alt="Gorra con diseño sostenible">
+            <div class="card-body">
+              <h3 class="card-title h5">Gorra Eco Kori</h3>
+              <p class="card-text"><span class="precio">S/ 30.00</span> unidad</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <button type="button" class="btn btn-marca w-100 btn-anadir">Añadir al Carrito</button>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Carrito de Compras -->
+    <section id="mi-pedido" class="card p-3" aria-labelledby="titulo-pedido">
+      <h2 id="titulo-pedido" class="h4" tabindex="-1">Mi Pedido de Merch</h2>
+      <p id="pedido-vacio" class="text-body-secondary">
+        Tu carrito está vacío. Selecciona productos del catálogo para apoyar la causa.</p>
+      <ul id="lista-pedido" class="list-unstyled mb-3"></ul>
+      <p class="fs-5 total">Total: <strong id="total">S/ 0.00</strong></p>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="pedidos.html" class="btn btn-marca">Proceder al Formulario</a>
+        <button type="button" class="btn btn-outline-danger"
+                data-bs-toggle="modal" data-bs-target="#modalVaciar">Vaciar Pedido</button>
+      </div>
+      <p id="aviso" class="visually-hidden" role="status"></p>
+    </section>
+  </main>
+
+  <!-- Modal de confirmación para vaciar el pedido -->
+  <div class="modal fade" id="modalVaciar" tabindex="-1"
+       aria-labelledby="modalVaciarTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modalVaciarTitulo">¿Vaciar tu pedido?</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          Se quitarán todos los productos. Esta acción no se puede deshacer.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary"
+                  data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger" id="confirmarVaciar"
+                  data-bs-dismiss="modal">Sí, vaciar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página en tres columnas -->
+  <footer class="border-top py-4 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h2 class="h5">Kori Store</h2>
+          <p class="texto-suave mb-0">Merch oficial para la conservación del Mono Choro de Cola Amarilla.</p>
+        </div>
+        <div class="col-md-6">
+          <h2 class="h5">Tus datos</h2>
+          <p class="texto-suave mb-0">Se usan solo para coordinar la entrega de tu pedido, según la Ley N.° 29733.</p>
+        </div>
+      </div>
+      <p class="texto-suave small mt-4 mb-0">&copy; 2026 Kori Store - Iniciativa Académica de Conservación</p>
+    </div>
+  </footer>
+
+</body>
+</html>
