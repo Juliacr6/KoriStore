@@ -10,7 +10,6 @@ const botonesAnadir = document.querySelectorAll('.btn-anadir');
 const listaPedido = document.getElementById('lista-pedido');
 const totalSpan = document.getElementById('total');
 const pedidoVacio = document.getElementById('pedido-vacio');
-const btnVaciar = document.getElementById('btn-vaciar');
 const avisoLector = document.getElementById('aviso');
 
 // Función para actualizar la visualización del carrito en la página
@@ -21,14 +20,15 @@ function actualizarCarrito() {
     let total = 0;
 
     if (carrito.length === 0) {
-        pedidoVacio.style.display = 'block';
+        pedidoVacio.classList.remove('d-none');
         totalSpan.textContent = 'S/ 0.00';
         avisoLector.textContent = 'Tu carrito está vacío.';
         localStorage.removeItem('kori_carrito');
+        localStorage.removeItem('kori_total');
         return;
     }
 
-    pedidoVacio.style.display = 'none';
+    pedidoVacio.classList.add('d-none');
 
     carrito.forEach((producto, index) => {
         total += producto.precio * producto.cantidad;
@@ -36,8 +36,9 @@ function actualizarCarrito() {
         const li = document.createElement('li');
         li.innerHTML = `
             <span>${producto.nombre} (x${producto.cantidad})</span>
-            <span>S/ ${(producto.precio * producto.cantidad).toFixed(2)} 
-                <button type="button" class="btn-eliminar" data-index="${index}" style="margin-left: 10px; background: #d90429; color: white; border: none; border-radius: 3px; padding: 2px 6px; cursor: pointer;">X</button>
+            <span>S/ ${(producto.precio * producto.cantidad).toFixed(2)}
+                <button type="button" class="btn-quitar" data-index="${index}"
+                        aria-label="Quitar ${producto.nombre}">Quitar</button>
             </span>
         `;
         listaPedido.appendChild(li);
@@ -50,10 +51,10 @@ function actualizarCarrito() {
     localStorage.setItem('kori_carrito', JSON.stringify(carrito));
     localStorage.setItem('kori_total', total.toFixed(2));
 
-    // Activar botones de eliminar de cada ítem
-    document.querySelectorAll('.btn-eliminar').forEach(boton => {
+    // Activar botones de quitar de cada ítem
+    document.querySelectorAll('.btn-quitar').forEach(boton => {
         boton.addEventListener('click', (e) => {
-            const index = e.target.getAttribute('data-index');
+            const index = e.currentTarget.getAttribute('data-index');
             carrito.splice(index, 1);
             actualizarCarrito();
         });
@@ -76,21 +77,13 @@ botonesAnadir.forEach(boton => {
         }
 
         actualizarCarrito();
-        
+
         // Notificación accesible
         if (avisoLector) {
             avisoLector.textContent = `Se añadió ${nombre} al carrito.`;
         }
     });
 });
-
-// Botón para vaciar todo el pedido
-if (btnVaciar) {
-    btnVaciar.addEventListener('click', () => {
-        carrito = [];
-        actualizarCarrito();
-    });
-}
 
 // Cargar el carrito al iniciar la página
 document.addEventListener('DOMContentLoaded', () => {

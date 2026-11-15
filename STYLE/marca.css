@@ -1,0 +1,162 @@
+/* ==========================================
+   KORI STORE - marca.css  (versión minimalista)
+   Se carga DESPUÉS de Bootstrap y solo cambia sus variables --bs-*.
+   Una sola paleta: tinta oscura + verde de acento sobre crema.
+   ========================================== */
+
+/* ===== 1. Paleta ===== */
+:root {
+  --tinta: #1f2421;
+  --verde: #2d6a4f;
+  --muted: #6b665a;            /* 5.4:1 sobre crema */
+  --linea: #e8e4d8;
+  --hover: #efece1;
+  --bs-body-bg: #fcfbf7;
+  --bs-body-color: #2b2b2b;
+  --bs-body-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --bs-border-color: var(--linea);
+  --bs-link-color: var(--verde);
+  --bs-link-hover-color: var(--tinta);
+}
+
+h1, h2, h3, h4, h5 { color: var(--tinta); }
+
+/* ===== 2. Botones: planos, de bordes suaves ===== */
+.btn {
+  --bs-btn-border-radius: 0.4rem;
+  --bs-btn-font-weight: 500;
+  --bs-btn-font-size: 0.95rem;
+  box-shadow: none;
+}
+
+/* Principal: tinta sólida, hover verde */
+.btn-marca {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--tinta);
+  --bs-btn-border-color: var(--tinta);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--verde);
+  --bs-btn-hover-border-color: var(--verde);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--verde);
+  --bs-btn-active-border-color: var(--verde);
+  --bs-btn-focus-shadow-rgb: 31, 36, 33;
+}
+
+/* Secundario: texto sin borde, fondo suave al pasar el mouse */
+.btn-ghost {
+  --bs-btn-color: var(--tinta);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: var(--tinta);
+  --bs-btn-hover-bg: var(--hover);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: var(--tinta);
+  --bs-btn-active-bg: var(--linea);
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-focus-shadow-rgb: 31, 36, 33;
+}
+
+/* ===== 3. Barra de navegación clara ===== */
+.navbar {
+  --bs-navbar-brand-color: var(--tinta);
+  --bs-navbar-brand-hover-color: var(--verde);
+  background-color: var(--bs-body-bg);
+}
+
+/* ===== 4. Portada ===== */
+.hero h1 { letter-spacing: -0.5px; }
+.hero .lead { color: var(--muted); font-size: 1.1rem; }
+
+/* ===== 5. Catálogo ===== */
+.producto {
+  border: 1px solid var(--linea);
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+}
+
+.producto:hover { border-color: #cfc9b6; }
+
+/* Todas las fotos con la misma proporción: tarjetas iguales */
+.producto .card-img-top,
+.sin-foto {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Marcador que imagenes.js pone cuando falta la foto de un producto */
+.sin-foto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hover);
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
+}
+
+.producto .card-title { font-weight: 600; }
+
+.precio {
+  font-weight: 600;
+  color: var(--verde);         /* 6.4:1 sobre blanco */
+}
+
+/* ===== 6. Carrito ===== */
+#mi-pedido,
+.card { border-color: var(--linea); }
+
+#lista-pedido li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.btn-quitar {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  text-decoration: underline;
+  padding: 0.15rem 0.4rem;
+  margin-left: 0.5rem;
+}
+
+.btn-quitar:hover { color: #b00020; }
+
+/* ===== 7. Impacto, acordeón y formulario ===== */
+.tarjeta-fondo {
+  background: #ffffff;
+  border-left: 3px solid var(--verde);
+}
+
+.accordion {
+  --bs-accordion-border-color: var(--linea);
+  --bs-accordion-active-bg: var(--hover);
+  --bs-accordion-active-color: var(--tinta);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(31, 36, 33, 0.25);
+}
+
+.form-control:focus,
+.form-check-input:focus {
+  border-color: var(--tinta);
+  box-shadow: 0 0 0 0.2rem rgba(31, 36, 33, 0.2);
+}
+
+.form-check-input:checked {
+  background-color: var(--tinta);
+  border-color: var(--tinta);
+}
+
+.error-msg {
+  color: #b00020;              /* 6.8:1 sobre blanco */
+  font-size: 0.875rem;
+}
+
+/* ===== 8. Pie de página ===== */
+footer { background: transparent; color: var(--muted); font-size: 0.95rem; }
+footer h2 { color: var(--tinta); font-weight: 600; }
+.texto-suave { color: var(--muted); }
