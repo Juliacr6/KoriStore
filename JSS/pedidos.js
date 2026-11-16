@@ -65,8 +65,22 @@ function actualizarCarrito() {
 botonesAnadir.forEach(boton => {
     boton.addEventListener('click', (e) => {
         const article = e.target.closest('.producto');
-        const nombre = article.getAttribute('data-nombre');
+        let nombre = article.getAttribute('data-nombre');
         const precio = parseFloat(article.getAttribute('data-precio'));
+
+        // Poleras y polos: hay que elegir talla (el resto de productos no tiene selector)
+        const grupoTalla = article.querySelector('.tallas');
+        if (grupoTalla) {
+            const elegida = grupoTalla.querySelector('input[type="radio"]:checked');
+            const error = grupoTalla.querySelector('.error-talla');
+            if (!elegida) {
+                error.textContent = 'Elige una talla antes de añadir.';
+                grupoTalla.querySelector('input[type="radio"]').focus();
+                return;
+            }
+            error.textContent = '';
+            nombre += ` - Talla ${elegida.value}`;
+        }
 
         // Verificar si el producto ya está en el carrito
         const productoExistente = carrito.find(item => item.nombre === nombre);
@@ -88,4 +102,11 @@ botonesAnadir.forEach(boton => {
 // Cargar el carrito al iniciar la página
 document.addEventListener('DOMContentLoaded', () => {
     actualizarCarrito();
+});
+
+// Al elegir una talla, se borra el aviso de error
+document.querySelectorAll('.tallas input').forEach(radio => {
+    radio.addEventListener('change', () => {
+        radio.closest('.tallas').querySelector('.error-talla').textContent = '';
+    });
 });

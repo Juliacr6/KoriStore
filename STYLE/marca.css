@@ -160,3 +160,27 @@ h1, h2, h3, h4, h5 { color: var(--tinta); }
 footer { background: transparent; color: var(--muted); font-size: 0.95rem; }
 footer h2 { color: var(--tinta); font-weight: 600; }
 .texto-suave { color: var(--muted); }
+
+/* ===== 9. Selector de talla (poleras y polos) ===== */
+.tallas { border: 0; padding: 0; margin-bottom: 0; }
+.tallas legend { float: none; width: auto; font-size: 0.85rem; }
+
+.btn-talla {
+  --bs-btn-color: var(--tinta);
+  --bs-btn-bg: #ffffff;
+  --bs-btn-border-color: var(--linea);
+  --bs-btn-hover-color: var(--tinta);
+  --bs-btn-hover-bg: var(--hover);
+  --bs-btn-hover-border-color: #cfc9b6;
+  --bs-btn-focus-shadow-rgb: 31, 36, 33;
+}
+
+/* Talla elegida: tinta sólida */
+.btn-check:checked + .btn-talla {
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--tinta);
+  --bs-btn-active-border-color: var(--tinta);
+  color: #ffffff;
+  background-color: var(--tinta);
+  border-color: var(--tinta);
+}
